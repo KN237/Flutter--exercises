@@ -1,14 +1,17 @@
-import 'package:exercices/dicey/index.dart';
+import 'package:exercices/quizey/index.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-String title = 'Dicey';
+String title = 'Quizey';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   runApp(
     MaterialApp(
       title: title,
       debugShowCheckedModeBanner: false,
-      home: Dicey(title: title),
+      home: Quizey(title: title),
     ),
   );
 }
